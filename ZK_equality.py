@@ -15,10 +15,10 @@ def ZK_equality(G,H):
     D1, D2 = elgamal(G, H, r_2, sec)
 
     #Generate a NIZK proving equality of the plaintexts
-    statement = DLRep(C1, r_1*G) and DLRep(C2, r_1*H+sec*G) and DLRep(D1, r_2*G) and DLRep(D2, r_2*H+sec*G)
-    print(statement)
+    stmt = DLRep(C1, r_1*G) and DLRep(C2, r_1*H+sec*G) and DLRep(D1, r_2*G) and DLRep(D2, r_2*H+sec*G)
+    print(stmt)
     #zk_proof
-    zk_proof = statement.prove()
+    zk_proof = stmt.prove()
 
     #Return two ciphertexts and the proof
     return (C1,C2), (D1,D2), zk_proof
