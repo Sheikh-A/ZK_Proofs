@@ -24,7 +24,7 @@ def ZK_equality(G,H):
 
 def elgamal(G, H, r, m):
     #define x
-    x =  G * r.value
+    x =  r.value * G
     #print(x)
     y = r.value * H + m.value * G
     #print(y)
