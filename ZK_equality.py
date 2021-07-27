@@ -16,7 +16,7 @@ def ZK_equality(G,H):
     #Define statement
     statment = DLRep(C1, G * r_1) & DLRep(C2, r_1 * H + m * G) & DLRep(D1, G * r_2) & DLRep(D2, r_2*H+m*G)
     #Proof
-    print(statement)
+    #print(statement)
     zk_proof = statment.prove()
 
     #Return two ciphertexts and the proof
@@ -26,6 +26,6 @@ def elgamal(G, H, r, m):
     #define x
     x =  G * r.value
     #print(x)
-    y =  m.value * G + r.value * H
+    y = r.value * H + m.value * G
     #print(y)
     return x,y
